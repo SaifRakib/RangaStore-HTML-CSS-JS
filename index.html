@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RakibStore</title>
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/style.css" />
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+  <!-- Bootsrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
   <!-- google Montserrat  font  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,31 +18,38 @@
 </head>
 
 <body>
-  <header></header>
-  <main class="main">
-    <div class="search-field">
+  <header class="container">
+    <h2 class="text-center text-info mt-3">Welcome to RakibStore</h2>
+  </header>
+<!-- Body Part -->
+  <main class="container main">
+    <!-- Search Box -->
+    <div class="search-field m-4">
       <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
+        <div class="input-group mb-3">
+          <input id="input-field" type="text" class="form-control" placeholder="Search by product name" aria-label="Search by product name" aria-describedby="basic-addon2">
+          <div class="input-group-append ms-2">
+            <button class="btn btn-outline-secondary" type="button" id="search-btn" onclick="loadProducts();">Search</button>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Search Box End -->
+
     <div class="row">
+      <!-- Product Interface -->
       <div class="col-md-9 col-lg-9 col-sm-7">
         <div id="all-products" class="">
          <!-- All product will be shown here -->
         </div>
       </div>
+      <!-- Cart -->
       <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
         <div class="cart" id="my-cart">
           <table class="table">
             <thead>
-              <h1>My-Cart</h1>
+              <h2 class="text-center">My-Cart</h2>
               <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
@@ -51,45 +58,71 @@
               <tr>
                 <th>Total Added-Products:</th>
                 <td><span id="total-Products">0</span></td>
-                <td></td>
-                <td></td>
+                
               </tr>
               <tr>
                 <th>Price:</th>
                 <td>$ <span id="price">0</span></td>
-                <td></td>
-                <td></td>
+               
               </tr>
               <tr>
                 <th>Delivery-Charge:</th>
                 <td>$ <span id="delivery-charge">20</span></td>
-                <td></td>
-                <td></td>
+              
               </tr>
               <tr>
                 <th>Total-Tax:</th>
                 <td>$ <span id="total-tax">0</span></td>
-                <td></td>
-                <td></td>
+              
               </tr>
               <tr>
                 <th scope="row">Total</th>
                 <td colspan="2">$ <span id="total">0</span></td>
-                <td></td>
+               
               </tr>
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button type="button" class="btn btn-success">Buy Now</button>
           </div>
         </div>
       </div>
+      <!-- Cart end -->
     </div>
   </main>
+  <!-- Body part End -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Product Information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <!-- Product details here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
   <footer></footer>
 
   <!-- add javascript  file  -->
   <script src="./js/app.js"></script>
+  <!-- Bootstrap js cdn -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -9,8 +9,6 @@ loadProducts();
 // show all product in UI 
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
-  // for testing log
-  console.log(allProducts);
 
   for (const product of allProducts) {
     const image = product.image;
@@ -21,11 +19,13 @@ const showProducts = (products) => {
         <div>
           <img class="product-image" src=${image}></img>
         </div>
-        <h3>${product.title}</h3>
+        <h5>${product.title}</h5>
         <p>Category: ${product.category}</p>
-        <h2>Price: $ ${product.price}</h2>
-        <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-        <button id="details-btn" class="btn btn-danger">Details</button>
+        <p>Product Rating: ${product.rating.rate}</p>
+        <p>Rated by ${product.rating.count} peoples</p>
+        <h4>Price: $ ${product.price}</h4>
+        <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-dark">Add to cart</button>
+        <button id="details-btn" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" onclick="getProductDetails(${product.id})">Details</button>
       </div>
       `;
     document.getElementById("all-products").appendChild(div);
@@ -85,3 +85,23 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
+
+// fetch single information and shoing in modal
+const getProductDetails = (id) =>{
+  fetch(`https://fakestoreapi.com/products/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+
+      const modalBody = document.getElementById('modal-body');
+      let html = `
+     
+        <h6>Product title: ${data.title}</h6>
+        <p>Product Category: ${data.category}</p>
+        <p>Product Description: ${data.description}</p>
+        <p>Product Rating: ${data.rating.rate} , Rated by ${data.rating.count} peoples</p>
+      `;
+      modalBody.innerHTML = html;
+    });
+}
+
