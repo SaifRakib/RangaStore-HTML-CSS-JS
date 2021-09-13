@@ -5,7 +5,6 @@ body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
 }
-
 /* Search box css */
 .search-box{
   display: block;
@@ -37,6 +36,7 @@ body {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
   border: 1px solid #f1f1f1;
+  background-color: #f9f9f9;
 }
 .product-image {
   width: 150px;
