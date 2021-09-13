@@ -1,9 +1,12 @@
-/* Font family of website */
+/* Google font "Roboto"  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
   overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
+/* Search box css */
 .search-box{
   display: block;
   margin-left: auto;
@@ -15,6 +18,7 @@ body {
   border-radius: 5px;
 }
 
+/* Product css */
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -27,7 +31,7 @@ body {
 .single-product {
   height: 520px;
   padding: 10px;
-  transition: 0.5s;
+  transition: 0.6s;
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
@@ -38,6 +42,7 @@ body {
   width: 150px;
   height: 150px;
 }
+/* cart css */
 .cart {
   width: 300px;
   padding: 10px;
@@ -46,6 +51,7 @@ body {
   position: fixed;
 }
 
+/* Responsive media query */
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;

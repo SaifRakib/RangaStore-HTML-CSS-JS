@@ -1,3 +1,4 @@
+// Fetch api
 const loadProducts = () => {
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
@@ -31,6 +32,7 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+// cart js
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -86,13 +88,12 @@ const updateTotal = () => {
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
 
-// fetch single information and shoing in modal
+// fetch single information and showing in modal
 const getProductDetails = (id) =>{
   fetch(`https://fakestoreapi.com/products/${id}`)
     .then(res => res.json())
     .then(data => {
-      console.log(data);
-
+   
       const modalBody = document.getElementById('modal-body');
       let html = `
      
